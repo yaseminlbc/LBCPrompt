@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbcprompt.API", "Lbcprompt.API\Lbcprompt.API.csproj", "{15D12A79-E161-43B8-BCD5-56C61BC3356F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15D12A79-E161-43B8-BCD5-56C61BC3356F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D12A79-E161-43B8-BCD5-56C61BC3356F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D12A79-E161-43B8-BCD5-56C61BC3356F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D12A79-E161-43B8-BCD5-56C61BC3356F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BA7AEC4-28CA-4243-A602-E82E7C8B726F}
+	EndGlobalSection
+EndGlobal

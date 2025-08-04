@@ -1,0 +1,12 @@
+node_modules/
+build/
+.env
+
+Lbcprompt.API/bin/
+Lbcprompt.API/obj/
+Lbcprompt.API/.vs/
+Lbcprompt.API/appsettings.Development.json
+Lbcprompt.API/appsettings.Local.json
+
+*.log
+*.DS_Store
