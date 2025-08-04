@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lbcprompt.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64d41603a603c74d12b4124556f6c790fc3e07a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad6d21fbd0c7f553b096ec4a5b1228f77447731a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lbcprompt.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lbcprompt.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
