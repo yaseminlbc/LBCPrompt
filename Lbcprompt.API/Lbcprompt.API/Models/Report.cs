@@ -14,7 +14,6 @@ namespace Lbcprompt.API.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // İlişkiler
         public int PromptId { get; set; }
         public Prompt Prompt { get; set; }
 

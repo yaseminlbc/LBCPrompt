@@ -21,38 +21,38 @@ namespace Lbcprompt.API.Services
 
         public async Task<Prompt> CreatePromptAsync(PromptDto dto, int userId)
         {
-            // 1. Tüm tag isimlerini tekilleştir
+            
             var distinctTagNames = (dto.Tags ?? new List<string>())
                 .Select(t => t.Trim())
                 .Distinct()
                 .ToList();
 
-            // 2. DB'de var olanları çek
+            
             var existingTags = await _ctx.Tags
                 .Where(t => distinctTagNames.Contains(t.Name))
                 .ToListAsync();
 
-            // 3. Yeni eklenecek tag isimlerini bul
+            
             var newTagNames = distinctTagNames
                 .Except(existingTags.Select(t => t.Name))
                 .ToList();
 
-            // 4. Yeni tag'leri ekle
+            
             foreach (var tagName in newTagNames)
             {
                 _ctx.Tags.Add(new Tag { Name = tagName });
             }
 
-            // 5. Yeni tag'leri DB'ye kaydet (varsa)
+            
             if (newTagNames.Count > 0)
                 await _ctx.SaveChangesAsync();
 
-            // 6. Tüm tag'leri tekrar DB'den çek
+            
             var allTags = await _ctx.Tags
                 .Where(t => distinctTagNames.Contains(t.Name))
                 .ToListAsync();
 
-            // 7. Prompt'u oluştur
+            
             var prompt = new Prompt
             {
                 Title = dto.Title,

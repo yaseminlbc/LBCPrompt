@@ -25,7 +25,6 @@ namespace Lbcprompt.API.Controllers
             _mapper = mapper;
         }
 
-        // Tüm promptları getir
         [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<PromptDto>>> GetAll()
@@ -34,7 +33,6 @@ namespace Lbcprompt.API.Controllers
             return Ok(_mapper.Map<IEnumerable<PromptDto>>(list));
         }
 
-        // ID ile tek prompt getir
         [HttpGet("{id:int}")]
         [AllowAnonymous]
         public async Task<ActionResult<PromptDto>> GetById(int id)
@@ -44,20 +42,20 @@ namespace Lbcprompt.API.Controllers
             return Ok(_mapper.Map<PromptDto>(prompt));
         }
 
-        // Yeni prompt oluştur
+        
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<PromptDto>> Create([FromBody] PromptDto dto)
         {
-            // Kullanıcı id'sini al (JWT zorunlu)
+            
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (!int.TryParse(userIdClaim, out var userId))
                 return Unauthorized();
 
-            // Service ile prompt ekle
+            
             var created = await _promptService.CreatePromptAsync(dto, userId);
 
-            // Başarıyla eklenince 201 Created dön
+            
             return CreatedAtAction(
                 nameof(GetById),
                 new { id = created.Id },

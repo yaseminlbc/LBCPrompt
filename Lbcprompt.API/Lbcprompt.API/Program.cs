@@ -14,19 +14,18 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Uygulamanın sadece 5000 portunda çalışmasını istiyorsak
+
 builder.WebHost.UseUrls("http://localhost:5000");
 
-// 1) JWT ayarlarını oku
+
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var jwtKey = Encoding.UTF8.GetBytes(
     jwtSettings["Key"] ?? throw new Exception("JwtSettings:Key null!"));
 
-// 2) DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 3) Authentication / JWT
+
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(o =>
@@ -60,7 +59,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// 4) Authorization & DI
+
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPromptService, PromptService>();
@@ -72,7 +71,7 @@ builder.Services.AddScoped<ILikeService, LikeService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 
-// 5) CORS
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -84,7 +83,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// 6) Controllers, AutoMapper, Swagger
+
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
 builder.Services.AddEndpointsApiExplorer();
@@ -113,10 +112,10 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// --- build
+
 var app = builder.Build();
 
-// --- swagger
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -124,10 +123,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// --- pipeline
+
 app.UseRouting();
 
-// CORS’u Route’dan sonra, Auth’dan önce uyguluyoruz
+
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();

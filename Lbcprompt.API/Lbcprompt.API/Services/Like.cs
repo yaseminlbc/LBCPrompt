@@ -18,16 +18,15 @@ namespace Lbcprompt.API.Services
 
         public async Task<bool> LikePromptAsync(int promptId, int userId)
         {
-            // Mevcut beğeniyi kontrol et
             if (await _ctx.Likes.AnyAsync(l => l.PromptId == promptId && l.UserId == userId))
                 return false;
 
-            // Prompt var mı?
+            
             var promptExists = await _ctx.Prompts.AnyAsync(p => p.Id == promptId);
             if (!promptExists)
                 return false;
 
-            // Yeni like
+            
             var like = new Like
             {
                 PromptId = promptId,

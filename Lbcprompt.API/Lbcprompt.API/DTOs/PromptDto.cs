@@ -16,7 +16,6 @@ namespace Lbcprompt.API.DTOs
         [Required]
         public string Content { get; set; } = string.Empty;
 
-        // Eğer DTO’da likes count gösterecekseniz
         public int Likes { get; set; }
 
         public DateTime CreatedAt { get; set; }
@@ -31,7 +30,6 @@ namespace Lbcprompt.API.DTOs
 
         public bool IsApproved { get; set; }
 
-        // ➤ Mutlaka initialize edin:
         public List<string> Tags { get; set; } = new List<string>();
     }
 }

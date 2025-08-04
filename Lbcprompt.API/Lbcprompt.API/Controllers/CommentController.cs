@@ -5,8 +5,8 @@ using Lbcprompt.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Lbcprompt.API.Data;        // DbContext’inizin namespace’i
-using Lbcprompt.API.Models;     // Entity modellerinizin namespace’i
+using Lbcprompt.API.Data;       
+using Lbcprompt.API.Models;     
      
 
 namespace Lbcprompt.API.Controllers

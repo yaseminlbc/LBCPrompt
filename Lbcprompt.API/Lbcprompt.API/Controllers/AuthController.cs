@@ -30,7 +30,7 @@ namespace Lbcprompt.API.Controllers
             if (user == null)
                 return BadRequest(new { message = "E-posta zaten kullanımda." });
 
-            // JWT claim’leri
+           
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),

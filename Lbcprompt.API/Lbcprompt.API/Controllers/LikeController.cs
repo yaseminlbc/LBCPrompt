@@ -60,14 +60,14 @@ namespace Lbcprompt.API.Controllers
             return Ok(new { liked });
         }
 
-        // --- ASIL SIKINTI BURADA: GELİŞMİŞ CLAIM BULUCU ---
+      
         private int GetUserId()
         {
             Console.WriteLine("DEBUG: JWT Claims dump:");
             foreach (var c in User.Claims)
                 Console.WriteLine($" - {c.Type}: {c.Value}");
 
-            // Birden çok claim adını sırayla dene
+           
             var claim =
                 User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
                 User.FindFirst("nameid")?.Value ??
