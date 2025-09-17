@@ -172,3 +172,4 @@ C:\Users\yasem\source\repos\Lbcprompt.API\Lbcprompt.API\obj\Debug\net8.0\Lbcprom
 C:\Users\yasem\source\repos\Lbcprompt.API\Lbcprompt.API\obj\Debug\net8.0\Lbcprompt.API.genruntimeconfig.cache
 C:\Users\yasem\source\repos\Lbcprompt.API\Lbcprompt.API\obj\Debug\net8.0\ref\Lbcprompt.API.dll
 C:\Users\yasem\source\repos\Lbcprompt.API\Lbcprompt.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\yasem\source\repos\Lbcprompt.API\Lbcprompt.API\obj\Debug\net8.0\Lbcprompt.API.sourcelink.json

@@ -1,12 +1,29 @@
-node_modules/
-build/
-.env
+# ----- .NET build çıktıları -----
+**/bin/
+**/obj/
+*.pdb
+*.dll
+*.exe
+*.cache
+*.log
 
+# ----- IDE klasörleri -----
+.vs/
+.vscode/
+
+# ----- Node/React -----
+node_modules/
+**/node_modules/
+dist/
+build/
+
+# ----- Ortam dosyaları (gizli kalsın) -----
+.env
+**/.env
+
+# Projeye özel (gerekirse)
 Lbcprompt.API/bin/
 Lbcprompt.API/obj/
-Lbcprompt.API/.vs/
-Lbcprompt.API/appsettings.Development.json
-Lbcprompt.API/appsettings.Local.json
+blog-frontend/node_modules/
+blog-frontend/dist/
 
-*.log
-*.DS_Store
